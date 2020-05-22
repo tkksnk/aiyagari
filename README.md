@@ -30,3 +30,7 @@ hyperfine 'julia aiyagari.jl'
 https://www.sas.upenn.edu/~jesusfv/Update_March_23_2018.pdf
 
 https://web.stanford.edu/~maliars/Files/CEPR-DP13210.pdf
+
+## Acknowledgement
+
+I thank @yirwk and @yaoton for improving the python code.
