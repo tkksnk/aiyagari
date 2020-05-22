@@ -80,8 +80,8 @@ for ie = 1:ne
 end
 
 % transition matrix
-AA = sparse(nb*ne,nb*ne);
-%AA = zeros(nb*ne,nb*ne);
+%AA = sparse(nb*ne,nb*ne);
+AA = zeros(nb*ne,nb*ne);
 wb = zeros(nb,ne);
 
 for ie = 1:ne
@@ -108,17 +108,17 @@ end
 
 % distribution
 diffmu = 1e+4;
+dist0 = reshape(mu0,2*nb,1); 
 
 while (diffmu>critmu)
 
-    dist = reshape(mu0,2*nb,1); 
-    dist = AA'*dist;
-    mu1 = reshape(dist,nb,2);
-
-    diffmu = max(max(abs(mu1-mu0)));
-    mu0 = mu1/sum(sum(mu1));
+    dist1 = AA'*dist0;
+    diffmu = max(abs(dist1-dist0));
+    dist0 = dist1/sum(dist1);
 
 end
+
+mu0 = reshape(dist0,nb,2);
 
 % Calculate K
 m1 = 0.0;
