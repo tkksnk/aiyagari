@@ -1,18 +1,18 @@
 # Bewley-Huggett-Aiyagari model
 
-We compare the elapsed time for solving the standard Aiyagari model by each code written in Matlab, Python (with or without numba), or Julia.
+We compare the elapsed time for solving [the standard Aiyagari model](https://julia.quantecon.org/multi_agent_models/aiyagari.html) by each code written in Matlab, Python (with or without numba), or Julia.
 
 We run the scripts on a machine with Intel Core i7-4790K (4.0Ghz). To measure the time, we use [hyperfine](https://github.com/sharkdp/hyperfine).
 
-For Matlab,
+For Matlab (R2020a),
 ```
 hyperfine 'matlab -batch "aiyagari"'
 ```
-For Python,
+For Python (3.7.4 with Numba 0.45.1),
 ```
 hyperfine 'python aiyagari.py'
 ```
-For Julia,
+For Julia (1.2.0),
 ```
 hyperfine 'julia aiyagari.jl'
 ```
