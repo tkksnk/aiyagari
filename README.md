@@ -33,4 +33,4 @@ https://web.stanford.edu/~maliars/Files/CEPR-DP13210.pdf
 
 ## Acknowledgement
 
-I thank @yirwk and @yaoton for improving the python code.
+I thank @yirwk and @yukiyao for improving the python code.
