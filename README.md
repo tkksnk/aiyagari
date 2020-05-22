@@ -1,12 +1,25 @@
 # Bewley-Huggett-Aiyagari model
 
-- For given $(r_{t},w_{t})$, household $i$ chooses a policy to maximize
-$$
-    E_{0} \sum_{t=0}^{\infty} \beta^{t} u(c_{t})
-$$
-subject to
-$$
-    c_{t} + a_{t+1} \leq (1+r_{t}) a_{t} + w_{t} e_{t}
-$$
+We compare the elapsed time for each code written in Matlab, Python (with or without numba), or Julia.
 
-$c_{t}$ is consumption, $a_{t}$ is asset holding, $e_{t}$ is employment status.
+We run the scripts on a machine with Intel Core i7-4790K (4.0Ghz). To measure the time, we use hyperfine.
+
+For Matlab,
+```
+hyperfine 'matlab -batch "aiyagari"'
+```
+For Python,
+```
+hyperfine 'python aiyagari.py'
+```
+For Julia,
+```
+hyperfine 'julia aiyagari.jl'
+```
+
+## Results
+
+|  Language  |  Matlab  |  Python  |  Python-Numba  |  Julia  |
+| ---- | ---- | ---- | ---- | ---- |
+|  Time (mean ± σ):  |  37.274 s ±  0.239 s  |    |  TD  |  TD  |
+|  Range (min … max):  |  36.961 s … 37.758 s  |    |  TD  |  TD  |
